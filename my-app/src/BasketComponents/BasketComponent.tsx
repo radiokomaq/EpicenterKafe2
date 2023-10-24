@@ -5,6 +5,7 @@ import myState from '../Store/Store';
 import { observer } from 'mobx-react-lite'
 
 const BasketComponent:FC= () => {
+console.log('123');
 
 
 const ClouseAndNext=()=>{
