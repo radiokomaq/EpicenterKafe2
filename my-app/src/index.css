@@ -35,26 +35,6 @@ button:hover svg {
 }
 
 @keyframes success {
-  /* 0% {
-    margin-left: -300px;
-    opacity: 0;
-  }
-  40% {
-    margin-left: 0px;
-    opacity: 0.25;
-  }
-  50% {
-    margin-left: 0px;
-    opacity: 0.5;
-  }
-  60% {
-    margin-left: 0px;
-    opacity: 0.75;
-  }
-  100% {
-    margin-left: -600px;
-    opacity: 1  ;
-  } */
   0% {
     transform: translateX(100%);
   }

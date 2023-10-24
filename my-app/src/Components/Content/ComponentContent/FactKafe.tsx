@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const FactKafe = () => {
+const FactKafe: FC = () => {
     return (
         <>
             <h1 className='pt-9 text-lg'>

@@ -1,12 +1,11 @@
 
-import React from 'react';
+import React, { FC } from 'react';
 import Basket from '../Store/Basket';
 import myState from '../Store/Store';
 import { observer } from 'mobx-react-lite'
 
-const BasketComponent = () => {
+const BasketComponent:FC= () => {
 
-console.log(Basket.baskedItems.length);
 
 const ClouseAndNext=()=>{
 if (Basket.baskedItems.length != 0){

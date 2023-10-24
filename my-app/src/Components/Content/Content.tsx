@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { FC } from 'react'
 import FactKafe from './ComponentContent/FactKafe'
 import StaticKafe from './ComponentContent/StaticKafe'
 import AdvantagesKafe from './ComponentContent/AdvantagesKafe'
@@ -9,13 +9,10 @@ import { observer } from 'mobx-react-lite'
 
 
 
-const Content = () => {
+const Content: FC = () => {
 
 
-
-  // const [selectedDate, setSelectedDate] = useState<Date |null>(new Date());
-
-  function handleModalOpen(){
+  function handleModalOpen() {
     myState.setIsOpen(!myState.isOpen)
   }
   return (
@@ -40,9 +37,8 @@ const Content = () => {
       <p className='pl-20 pt-20 text-lg text-[#5e7383]'>Станьте частью семьи Эпицентр <br /> встречайте рабочие дни с удовольствием!</p>
       <div className='pt-5 pl-20 flex flex-row gap-4 '>
         <button onClick={handleModalOpen} className='bg-[#c6c5b9] text-black flex h-10 w-48 items-center justify-center'>Забронировать место</button>
-         
+
         <button className='bg-black text-[#c6c5b9] flex h-10 w-48 items-center justify-center'>Узнать больше</button>
-{/* <ModalDataComponent /> */}
       </div>
 
     </div>

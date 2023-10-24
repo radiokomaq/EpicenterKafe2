@@ -1,16 +1,10 @@
-import React, { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import axios from 'axios';
-import ModalDataComponent from './ModalDataComponent';
 import myState from '../../../Store/Store'
 import Basket from '../../../Store/Basket'
 import { observer } from 'mobx-react-lite';
 import moment from 'moment';
 
-
-// export type ModalContentProps = {
-//   selectedDate: Date | null,
-
-// }
 
 
 const ModalComponent: FC = () => {
@@ -32,7 +26,7 @@ const ModalComponent: FC = () => {
       if (pickElem[myState.responstTables[i]] === true)
         pickElem[myState.responstTables[i]] = false
     }
-  }, [myState.selectedDate,myState.responstTables])
+  }, [myState.selectedDate, myState.responstTables])
 
 
 
@@ -40,54 +34,34 @@ const ModalComponent: FC = () => {
 
 
     for (let i = 0; i <= myState.responstTables.length; i++) {
-      // console.log('имеем длину '+ myState.responstTables.length);
-
-      // console.log('сравнивает '+myState.responstTables[i]+' c этим '+ target);
 
       if (myState.responstTables[i] === target) {
-
-        // pickElem[target] = true
-        // console.log('таргет тута ' );
         return true;
 
       } else {
-        // console.log('таргет еблан ' );
+        console.log('таргет');
 
-        // elle[target]=false
-        // pickElem[target] = false
       }
     }
   }
 
 
   const addItem = (index: number) => {
-    // console.log('имеем длину '+ myState.responstTables.length);
 
     let flag = 0
     for (let i = 0; i <= myState.responstTables.length; i++) {
-      
-      for(let j=0;j<=pickElem.length;j++){
-        if((pickElem[j]===true) && (j===myState.responstTables[i])){
+
+      for (let j = 0; j <= pickElem.length; j++) {
+        if ((pickElem[j] === true) && (j === myState.responstTables[i]))
           console.log(pickElem[j]);
-          
-        }else{
-          console.log('попал в хуйню');
-          
-        }
+
+
       }
 
 
 
-      if (myState.responstTables[i] === index) {
+      if (myState.responstTables[i] === index)
         flag++
-        // console.log('таргет тута ' );
-
-      } else {
-        // if(pickElem[myState.responstTables[i]]===true)
-        // pickElem[myState.responstTables[i]]=false
-        // console.log(pickElem);
-
-      }
     }
     console.log(flag);
 
@@ -95,13 +69,11 @@ const ModalComponent: FC = () => {
       const updatedArray = [...pickElem];
       updatedArray[index] = !updatedArray[index];
       setPickElem(updatedArray);
-   
-
     }
 
   };
   function ElementMainStol(ElemMainStol: number): JSX.Element[] {
-    
+
     const elements: JSX.Element[] = [];
     elements.push(<div className='flex basis-full justify-center h-full   flex-row'>
       <div className='flex flex-col border-l-4 border-b-4 border-t-4 border-[#e4c3b2]' >
@@ -208,8 +180,8 @@ const ModalComponent: FC = () => {
       if (pickElem[i] === true)
         PickCount++
     }
-    if(PickCount>0)
-    return false 
+    if (PickCount > 0)
+      return false
     return true
 
   }
@@ -225,23 +197,6 @@ const ModalComponent: FC = () => {
     }
     return ResefStolPDT
   }
-  // console.log(myState.pickTables);
-
-  //   console.log(ArrayCount());
-
-  // console.log(myState.selectedDate);
-
-
-
-  // console.log(myState.selectedDate?.getHours()+':'+myState.selectedDate?.getMinutes());
-  // console.log(moment(myState.selectedDate).format('YYYY-MM-DD'));
-  // console.log(moment(myState.selectedDate).format('HH:mm'));
-
-
-
-
-  // console.log(myState.selectedDate?.toJSON()?.slice(0, 10));
-  // console.log(myState.selectedDate?.toJSON()?.slice(11, 16));
 
   function lastReserf() {
     const boostArray = []
@@ -253,25 +208,22 @@ const ModalComponent: FC = () => {
 
     myState.setPickTables(boostArray)
     myState.setIsOpen(false)
-    if(Basket.baskedItems.length!==0){
+    if (Basket.baskedItems.length !== 0) {
       myState.setRegistratonIsOpen(true)
-    }else{
+    } else {
       myState.setOrderSurveyisOpen(true)
     }
-    }
-  // console.log(myState.isOpen);
-  // console.log(myState.registratonIsOpen);
+  }
   return (
     <>
 
       <div className='flex w-full h-full  gap-4 p-5 pr-3' >
 
-        <div className='absolute bg-[red] top-[50%] h-56  '> Bar</div>
+        <div className='absolute bg-[red] top-[50%] h-56  '> 000</div>
         <div className='flex flex-row  w-full  basis-full '>
           <div className='flex basis-full  flex-col gap-6' >
             {ElementBalcony(12)}
             {ElementMainStol(1)}
-            {/* {ElementCentreHole()} */}
             <div className='flex min-h-[16.59%] justify-center '>
 
             </div>
@@ -302,19 +254,17 @@ const ModalComponent: FC = () => {
             {ElementMainStol(4)}
           </div>
           <div className='flex flex-col basis-full bg-[#f0dfd5] gap-2' >
-
-            {/* <div className='flex basis-10/12 items-start justify-start border-l-4 border-b-black'> </div> */}
             {ElementMainBalcony(15)}
             <div className='border-l-4 border-b-black pt-5'></div>
             {ElementMainBalcony(16)}
             <div className='flex basis-full items-start justify-center border-l-4  border-b-black text-[11px] ' >
               <div className='flex  '>
-              <div className="grid grid-cols-2 gap-2 overflow-y-scroll max-h-[120px]">           {ResefStol()}</div>
+                <div className="grid grid-cols-2 gap-2 overflow-y-scroll max-h-[120px]">           {ResefStol()}</div>
               </div>
             </div>
             <div className='flex items-end w-full justify-center'>
 
-              <button className={` px-4 py-2   rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 ${ ArrayCount() ? 'pointer-events-none text-[#DCDCDC] bg-blue-400':'pointer-events-auto text-[#F8F8FF] bg-blue-500'}`} onClick={() => lastReserf()}>Зарезервировать</button>
+              <button className={` px-4 py-2   rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 ${ArrayCount() ? 'pointer-events-none text-[#DCDCDC] bg-blue-400' : 'pointer-events-auto text-[#F8F8FF] bg-blue-500'}`} onClick={() => lastReserf()}>Зарезервировать</button>
 
             </div>
 
