@@ -1,6 +1,3 @@
-
-
-
 import React, { FC, useState, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import CreateReview from './ReviewComponent/CreateReview';
@@ -28,15 +25,14 @@ const Review: FC = () => {
     return <div>Loading...</div>;
   }
 
-  console.log(ReviewStore.responceReview);
 
   return (
     <div className="w-full h-full  px-[10%]">
       <CreateReview />
       <div className='relative grid grid-cols-4 gap-10'>
-      {ReviewStore.responceReview.map((review, index) => (
-        <DisplayReview key={index} review={review} />
-      ))}
+        {ReviewStore.responceReview.map((review, index) => (
+          <DisplayReview key={index} review={review} />
+        ))}
       </div>
     </div>
   );

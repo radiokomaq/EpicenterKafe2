@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 import myImage1 from '../../../photos/FotoModel1.png';
 import myImage2 from '../../../photos/FotoModel5.png';
 import myImage3 from '../../../photos/FotoModel4.png';
 
-const QuotesKafe = () => {
+const QuotesKafe: FC = () => {
     return (
         <div className='flex flex-row items-center gap-7 justify-center'>
             <div className='flex basis-full gap-3 flex-col bg-[#e3e3ff] rounded-xl'>

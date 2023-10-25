@@ -78,7 +78,7 @@ const ModalDataComponent: FC = () => {
 
       })
         .then(response => {
-          console.log(response.data);
+          
         })
         .catch(error => {
           console.error(error);
@@ -186,7 +186,7 @@ const ModalDataComponent: FC = () => {
         break;
     }
   }
-  console.log(nameError);
+
 
 
   return (

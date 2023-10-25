@@ -2,8 +2,6 @@
 
 import React, { FC } from 'react';
 import { observer } from 'mobx-react-lite'
-import Modal from '../../Content/Modal/Modal';
-import DetalisItemsMenu from './DetalisItemsMenu';
 import myState from '../../../Store/Store'
 import MenuStore from '../../../Store/MenuStore'
 import BasketStore from '../../../Store/Basket'
@@ -21,11 +19,10 @@ const MenuKafeItems: FC<MenuProps> = ({ name, description, photo, price }) => {
   }
   const dobav = () => {
     BasketStore.setBasketIsOpen(true)
-    BasketStore.setBaskedItems(name,photo,1,price)
+    BasketStore.setBaskedItems(name, photo, 1, price)
     myState.setIsOpenDetalis(false)
   }
-  // console.log(BasketStore.basketIsOpen);
-  
+
   return (
     <div className='flex flex-col gap-0 basis-[17%] border-[1px] border-white hover:border-[Silver] px-2 py-2'>
 

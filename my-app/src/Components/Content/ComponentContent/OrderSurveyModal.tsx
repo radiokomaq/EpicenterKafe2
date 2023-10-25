@@ -1,10 +1,10 @@
 
 
-import React from 'react'
+import React, { FC } from 'react'
 import myState from '../../../Store/Store'
 import { Link } from 'react-router-dom'
 
-const OrderSurveyModal = () => {
+const OrderSurveyModal:FC = () => {
 
     const OrderSurveyKafe = () => {
         myState.setOrderSurveyisOpen(false)

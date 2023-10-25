@@ -4,7 +4,6 @@ import ReviewStore from '../../../Store/ReviewStore';
 import { observer } from 'mobx-react-lite'
 import axios from 'axios';
 import Store from '../../../Store/Store';
-import { Link } from 'react-router-dom';
 
 
 const CreateReview: FC = () => {
@@ -80,7 +79,6 @@ const CreateReview: FC = () => {
         }
     };
 
-console.log(Store.misstakeIsOpen);
 
 
     async function HandleDataPush() {
@@ -98,7 +96,6 @@ console.log(Store.misstakeIsOpen);
                 massageBody: ReviewStore.messageBody
             })
                 .then(response => {
-                    console.log(response.data);
                     ReviewStore.setMessageBody('')
                     ReviewStore.setName('')
                     ReviewStore.setRating(0)

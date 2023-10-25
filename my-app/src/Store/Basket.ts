@@ -13,8 +13,8 @@ class BasketStore {
             basketIsOpen: observable,
             baskedItems: observable,
             baskedTotalCost: observable,
-            fillingCart:observable,
-            setFillingCart:action,
+            fillingCart: observable,
+            setFillingCart: action,
             setBaskedTotalCost: action,
             setBaskedItems: action,
             setBasketIsOpen: action,
@@ -25,23 +25,21 @@ class BasketStore {
     }
 
     setBaskedTotalCost() {
-this.baskedTotalCost=0
-if(this.baskedItems.length<1 && this.baskedItems.length>0){
-    this.baskedTotalCost = this.baskedItems[0].price
-}else{
-    
-        for (let i = 0; i < this.baskedItems.length; i++) {
-            this.baskedTotalCost = this.baskedTotalCost + this.baskedItems[i].price
+        this.baskedTotalCost = 0
+        if (this.baskedItems.length < 1 && this.baskedItems.length > 0) {
+            this.baskedTotalCost = this.baskedItems[0].price
+        } else {
+
+            for (let i = 0; i < this.baskedItems.length; i++) {
+                this.baskedTotalCost = this.baskedTotalCost + this.baskedItems[i].price
+            }
         }
-    }
-        if(this.baskedTotalCost>3000){
+        if (this.baskedTotalCost > 3000) {
             Store.setBookingAmount(this.baskedTotalCost)
         }
     }
 
     setBasketPlus(value: string) {
-        console.log(value);
-
         let flagCount = 0
         for (let i = 0; i < this.baskedItems.length; i++) {
             if (this.baskedItems[i].name === value)
@@ -76,7 +74,7 @@ if(this.baskedItems.length<1 && this.baskedItems.length>0){
     setFillingCart(value: boolean) {
         this.fillingCart = value
     }
-    
+
     setBaskedItems(value1: string, value2: string, value3: number, value4: number) {
         let flag = 0;
         let flagCount = 0;

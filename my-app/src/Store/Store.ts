@@ -8,7 +8,6 @@ class MyState {
     isOpenDetalis: boolean = false;
     registratonIsOpen:boolean = false;
     misstakeIsOpen:boolean = false;
-    // selectedDate: Date | null = new Date();
         selectedDate: Date | null = new Date();
     pickTables: number[] = [];
     responstTables:number[]=[];
@@ -85,17 +84,12 @@ this.responstTables = value.slice()
         this.misstakeIsOpen = true;
         setTimeout(() => {
             this.misstakeIsOpen = false;
-        }, 5000); // Задержка в 5 секунд (5000 миллисекунд)
+        }, 5000); 
     }
 
     setSelectedDate(date: Date | null) {
         if (date !== null && date >= new Date()) {
             this.selectedDate = moment(date).toDate();
-
-            // this.selectedDate = moment(date).toDate();
-        // if (date !== null && date >= new Date()) {
-        //     const formattedDate = moment(date).toDate();
-        //     this.selectedDate = formattedDate;
 
         } else {
             

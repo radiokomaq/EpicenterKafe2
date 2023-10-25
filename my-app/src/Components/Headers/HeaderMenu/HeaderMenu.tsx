@@ -7,9 +7,9 @@ import Snacks from '../../../photos/salat.png'
 import { Link } from 'react-router-dom';
 import Basket from '../../../Store/Basket';
 import BasketPhoto from '../../../photos/korzina.png'
-import {FaTelegramPlane} from 'react-icons/fa'
-import {AiFillInstagram} from 'react-icons/ai'
-import {BsFacebook} from 'react-icons/bs'
+import { FaTelegramPlane } from 'react-icons/fa'
+import { AiFillInstagram } from 'react-icons/ai'
+import { BsFacebook } from 'react-icons/bs'
 
 
 const HeaderMenu: FC = () => {
@@ -66,11 +66,6 @@ const HeaderMenu: FC = () => {
                 onMouseLeave={handleMouseLeave}
             > {isHover ? <div className=' h-[100%] w-[25%] absolute '>
                 <span className='flex justify-start '>&#9650;<span className='hover:text-[#005658]'>&nbsp;Меню</span></span>
-                {/* 
-
-                <b className='absolute right-full top-0 '>&#9650;</b> */}
-                {/* <div className='flex flex-col justify-center bg-black'>
-                    <h1 className='flex '>МЕНЮ </h1> */}
                 <div className='flex flex-row   gap-2 py-4  bg-black bg-opacity-75 rounded-md'>
                     <div className='flex basis-full justify-center items-center'>
                         {isHoverHookah ? <img src={Hookah} className='h-[130%] w-full' /> : isHoverKofe ? <img src={Koffe} className='h-full w-[81.5%]' /> : isHoverSnacks ? <img src={Snacks} className='h-[100%] w-[100%]' /> : <img src={Menu} className='h-full w-full' />}
@@ -107,15 +102,15 @@ const HeaderMenu: FC = () => {
             > {contaktDrop ?
                 <div className=' h-[100%]  absolute flex-col  gap-10'>
                     <span className='flex justify-start relative hover:text-[#005658]'>&nbsp;Контакты</span>
-                    <span className='flex relative justify-center pt-[4%] text-[blue]' > <FaTelegramPlane/></span>
-                    <span className='flex relative justify-center pt-[4%] text-[red]' > <AiFillInstagram/></span>
-                    <span className='flex relative justify-center pt-[4%] text-[#000080]' > <BsFacebook/></span>
+                    <span className='flex relative justify-center pt-[4%] text-[blue]' > <FaTelegramPlane /></span>
+                    <span className='flex relative justify-center pt-[4%] text-[red]' > <AiFillInstagram /></span>
+                    <span className='flex relative justify-center pt-[4%] text-[#000080]' > <BsFacebook /></span>
                 </div> :
                 <span className='flex justify-start hover:text-[#005658] '>&nbsp;Контакты</span>}
             </div>
             <div onClick={() => Basket.setBasketIsOpen(true)} className='flex basis-full '>
                 <img src={BasketPhoto} alt='Basket' className='h-7 w-8 ' />
-              
+
             </div>
         </div>
     );
