@@ -219,7 +219,7 @@ const ModalComponent: FC = () => {
 
       <div className='flex w-full h-full  gap-4 p-5 pr-3' >
 
-        <div className='absolute bg-[red] top-[50%] h-56  '> 000</div>
+        <div className='absolute bg-[red] top-[50%] h-56  '></div>
         <div className='flex flex-row  w-full  basis-full '>
           <div className='flex basis-full  flex-col gap-6' >
             {ElementBalcony(12)}
