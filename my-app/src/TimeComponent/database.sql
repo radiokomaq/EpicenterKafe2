@@ -27,8 +27,9 @@ CREATE TABLE reservation (
 CREATE TABLE menu_coffee(
     id SERIAL PRIMARY KEY,
     name_coffe VARCHAR(50),
-    volume VARCHAR(15),
-    photo BYTEA,
+    description_koffe VARCHAR(155),
+    volume VARCHAR(55),
+    photo VARCHAR(255),
     price int
 );
 
@@ -36,16 +37,18 @@ CREATE TABLE menu_coffee(
 CREATE TABLE menu_snacks(
     id SERIAL PRIMARY KEY,
     name_snacks VARCHAR(50),
-    description_snacks VARCHAR(75),
-    photo BYTEA,
+    description_snacks VARCHAR(155),
+    volume VARCHAR(55),
+    photo VARCHAR(255),
     price int
 );
 
 CREATE TABLE menu_hookah(
     id SERIAL PRIMARY KEY,
     name_hookah VARCHAR(50),
-    description_hookah VARCHAR(75),
-    photo BYTEA,
+    description_hookah VARCHAR(155),
+    volume VARCHAR(55),
+    photo VARCHAR(255),
     price int
 );
 
@@ -60,7 +63,8 @@ CREATE TABLE menu_dessert(
     id SERIAL PRIMARY KEY,
     name_dessert VARCHAR(50),
     description_dessert VARCHAR(155),
-    photo BYTEA,
+    volume VARCHAR(55),
+    photo VARCHAR(255),
     price int
 );
 
@@ -74,5 +78,5 @@ CREATE TABLE Review(
     id SERIAL PRIMARY KEY,
     name_person VARCHAR(50),
     rating int,
-    bodyMessage VARCHAR(255),
+    bodyMessage VARCHAR(255)
 );
