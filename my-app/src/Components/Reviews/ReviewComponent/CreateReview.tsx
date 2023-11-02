@@ -172,7 +172,6 @@ const CreateReview: FC = () => {
             <button onClick={HandleDataPush} className="bg-[orange] px-4 py-2 text-white rounded-md mb-4">
                 Submit
             </button>
-            <button onClick={()=>Store.handleButtonClickMisstake()}>misstake</button>
         </div>
     )
 }

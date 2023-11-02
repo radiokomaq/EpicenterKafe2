@@ -3,6 +3,8 @@ import React, { FC } from 'react';
 import Basket from '../Store/Basket';
 import myState from '../Store/Store';
 import { observer } from 'mobx-react-lite'
+import { IoIosRemove } from 'react-icons/io';
+import { IoIosAdd } from 'react-icons/io';
 
 const BasketComponent:FC= () => {
 
@@ -33,9 +35,9 @@ if (Basket.baskedItems.length != 0){
             </div>
             <div className="flex-grow"></div>
             <div className="flex items-center flex-row px-2 py-2 gap-3">
-                <p onClick={()=> Basket.setBasketMinus(item.name)} className='flex'>-</p>
-              <p className="text-gray-500 "> {item.count}</p>
-              <p onClick={()=>Basket.setBasketPlus(item.name)} className='flex '>+</p>
+                <p onClick={()=> Basket.setBasketMinus(item.name)} className='flex'><IoIosRemove className='cursor-pointer text-[14pt] text-gray-500 hover:text-black'/></p>
+              <p className="text-gray-500 text-base"> {item.count}</p>
+              <p onClick={()=>Basket.setBasketPlus(item.name)} className='flex '><IoIosAdd className='cursor-pointer  text-[14pt] text-gray-500 hover:text-black'/></p>
 
             </div>
           </div>

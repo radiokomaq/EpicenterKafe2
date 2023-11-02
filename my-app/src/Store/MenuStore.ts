@@ -1,3 +1,4 @@
+import { log } from 'console';
 import { observable, action, makeAutoObservable, toJS } from 'mobx';
 
 class MenuStore {
@@ -25,13 +26,14 @@ class MenuStore {
     });
   }
 
-  setDetalisItem(value1:string,value2:string,value3:string,value4:number){
+  setDetalisItem(value1:string,value2:string,value3:string,value4:number,value5:string){
     this.detalisItem[0] = value1
     this.detalisItem[1] = value2
     this.detalisItem[2] = value3
     this.detalisItem[3] = value4
     this.detalisItem[4] = 1
     this.detalisItem[5] = value4
+    this.detalisItem[6] = value5
   }
 
   setCountPlus(){

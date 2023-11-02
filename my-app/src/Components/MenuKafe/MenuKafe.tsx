@@ -19,6 +19,9 @@ const MenuKafe: FC = () => {
         MenuStore.setMenuSnacks(response.data.menuSnacks);
         MenuStore.setMenuDessert(response.data.menuDessert);
         setIsLoading(false);
+        console.log(response);
+        
+        
       } catch (error) {
         setIsLoading(false);
         console.error(error);
@@ -51,10 +54,10 @@ const MenuKafe: FC = () => {
     <div className='w-full h-full relative flex flex-col px-[10%] gap-10'>
       <NavMenu />
       <div className='flex flex-col gap-8 h-full w-full'>
-        <div className='flex text-lg'>kalain</div>
+        <div className='flex text-lg'>Кальян</div>
         <section id="section1" className='flex flex-row flex-wrap gap-10 justify-center items-center'>
           {MenuStore.menuHookah.map(item => (
-            <MenuKafeItems key={item.id} name={item.name_hookah} description={item.description_hookah} photo={item.photo} price={item.price} />
+            <MenuKafeItems key={item.id} name={item.name_hookah} description={item.volume} photo={item.photo} price={item.price} volume={item.description_hookah} />
           ))}
 
         </section>
@@ -63,7 +66,7 @@ const MenuKafe: FC = () => {
         <div className='flex text-lg'>Закуски</div>
         <section id="section2" className='flex flex-row flex-wrap gap-10 justify-center items-center'>
           {MenuStore.menuSnacks.map(item => (
-            <MenuKafeItems key={item.id} name={item.name_snacks} description={item.description_snacks} photo={item.photo} price={item.price} />
+            <MenuKafeItems key={item.id} name={item.name_snacks} description={item.description_snacks} photo={item.photo} price={item.price} volume={item.volume}/>
           ))}
 
         </section>
@@ -74,18 +77,18 @@ const MenuKafe: FC = () => {
 
 
           {MenuStore.menuDessert.map(item => (
-            <MenuKafeItems key={item.id} name={item.name_dessert} description={item.description_dessert} photo={item.photo} price={item.price} />
+            <MenuKafeItems key={item.id} name={item.name_dessert} description={item.description_dessert} photo={item.photo} price={item.price} volume={item.volume}/>
           ))}
 
         </section>
       </div>
       <div className='flex flex-col gap-8 h-full w-full'>
-        <div className='flex text-lg'>Коффе</div>
+        <div className='flex text-lg'>Кофе</div>
         <section id="section4" className='flex flex-row flex-wrap gap-10 justify-center items-center'>
 
 
           {MenuStore.menuKoffe.map(item => (
-            <MenuKafeItems key={item.id} name={item.name_coffe} description={item.volume} photo={item.photo} price={item.price} />
+            <MenuKafeItems key={item.id} name={item.name_coffe} description={item.description_koffe} photo={item.photo} price={item.price} volume={item.volume}/>
           ))}
 
         </section>

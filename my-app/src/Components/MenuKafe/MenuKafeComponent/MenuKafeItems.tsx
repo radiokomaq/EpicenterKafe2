@@ -11,11 +11,12 @@ interface MenuProps {
   description: string;
   photo: string;
   price: number;
+  volume:string;
 }
-const MenuKafeItems: FC<MenuProps> = ({ name, description, photo, price }) => {
+const MenuKafeItems: FC<MenuProps> = ({ name, description, photo, price,volume }) => {
   function handleModalOpen() {
     myState.setIsOpenDetalis(true)
-    MenuStore.setDetalisItem(name, description, photo, price)
+    MenuStore.setDetalisItem(name, description, photo, price,volume)
   }
   const dobav = () => {
     BasketStore.setBasketIsOpen(true)

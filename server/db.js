@@ -1,12 +1,17 @@
 const Pool = require('pg').Pool
-const dbConfig = JSON.parse(process.env.DATABASE_CONFIG);
+require('dotenv').config();
+// const dbConfig = JSON.parse(process.env.DATABASE_CONFIG);
+
 const pool = new Pool({
-    user: dbConfig.user,
-    password: dbConfig.password,
-    host: dbConfig.host,
-    port: dbConfig.port,
-    database: dbConfig.database
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: process.env.DB_DATABASE
 });
 
 module.exports=pool
- 
+
+
+
+
